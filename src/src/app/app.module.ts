@@ -3,8 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {AccueilModule} from "./pages/accueil/accueil.module";
-import {CommonComponentModule} from "./components/common.module";
+import {HomeModule} from "./pages/home/home.module";
 
 @NgModule({
   declarations: [
@@ -13,7 +12,7 @@ import {CommonComponentModule} from "./components/common.module";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AccueilModule
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

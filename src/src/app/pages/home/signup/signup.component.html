@@ -1,0 +1,23 @@
+<div class="bg-image"></div>
+<app-nav></app-nav>
+<section class="content">
+  <form class="signup" novalidate (ngSubmit)="onSubmit()" [formGroup]="signup" >
+    <label for="firstname">Prénom : </label>
+    <input type="text" name="firstname" id="firstname" required formControlName="firstname">
+    <label for="lastname">Nom : </label>
+    <input type="text" name="lastname" id="lastname" required formControlName="lastname">
+    <label for="email">Adresse email : </label>
+    <input type="email" name="email" id="email" required formControlName="email">
+    <label for="password">Mot de passe : </label>
+    <input type="password" name="password" id="password" required formControlName="password">
+    <label for="confirm-password">Confirmer le mot de passe : </label>
+    <input type="password" name="confirm-password" id="confirm-password" required formControlName="confirmedPassword">
+    <button type="submit">Inscription</button>
+    <div *ngIf="this.signup.value['firstname'] === undefined">
+      Name is required.
+    </div>
+    <div *ngIf="this.signup.value['password'] !== this.signup.value['confirmedPassword']">
+      Name must be at least 4 characters long.
+    </div>
+  </form>
+</section>

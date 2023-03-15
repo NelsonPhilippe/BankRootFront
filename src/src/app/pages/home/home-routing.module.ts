@@ -1,11 +1,16 @@
-import {AccueilComponent} from "./accueil.component";
+import {HomeComponent} from "./home.component";
 import {RouterModule, Routes} from "@angular/router";
 import {NgModule} from "@angular/core";
+import {SignupComponent} from "./signup/signup.component";
 
 const routes : Routes = [
   {
     path: '',
-    component: AccueilComponent
+    component: HomeComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent
   }
 ];
 
@@ -14,4 +19,4 @@ const routes : Routes = [
   exports: [RouterModule]
 })
 
-export class AccueilRoutingModule { }
+export class HomeRoutingModule { }

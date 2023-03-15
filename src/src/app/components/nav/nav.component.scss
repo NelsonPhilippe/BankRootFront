@@ -1,21 +1,25 @@
+@import '../../vars/variables';
+
 nav {
+  z-index: 1;
   display: flex;
   align-items: center;
-  background-color: #071A2E;
+  background-color: $primary-color;
   padding: 0;
   margin: 0;
-  height: 15vh;
+  height: 10vh;
 
   .logo{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10vh;
-    width: 10vh;
+    height: 8vh;
+    width: 8vh;
     overflow: hidden;
     border-radius: 100%;
     background-color: red;
     margin: 0 2vw;
+    background-color: gray;
 
     img{
       height: 120%;
@@ -23,4 +27,3 @@ nav {
     }
   }
 }
-

@@ -1,0 +1,58 @@
+@import '../../../vars/variables';
+
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  width: 100vw;
+
+  .signup {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 65%;
+    height: 60%;
+    color: white;
+    background-color: $secondary-color;
+    padding: 2rem;
+    border-radius: 10px;
+
+    label {
+      font-family: $font;
+      font-size: small;
+      margin: 0 0 10px 0;
+    }
+
+    input {
+      margin: 0 0 20px 0;
+      border-radius: 10px;
+      height: 25px;
+      border: none;
+      font-family: $font;
+      background-color: $tertiary-color;
+      padding: 2px 5px;
+
+
+      &:focus {
+        outline: none;
+        padding: 2px 5px;
+      }
+    }
+
+    button {
+      width: 40%;
+      margin: 0 auto;
+      border-radius: 10px;
+      padding: 5px;
+      color: white;
+      border: none;
+      background-color: #634597;
+    }
+  }
+}
+
+#password, #confirm-password {
+  width: 65%;
+}
