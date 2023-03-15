@@ -1,0 +1,26 @@
+nav {
+  display: flex;
+  align-items: center;
+  background-color: #071A2E;
+  padding: 0;
+  margin: 0;
+  height: 15vh;
+
+  .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 10vh;
+    overflow: hidden;
+    border-radius: 100%;
+    background-color: red;
+    margin: 0 2vw;
+
+    img{
+      height: 120%;
+      width: 120%;
+    }
+  }
+}
+
