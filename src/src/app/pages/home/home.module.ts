@@ -5,11 +5,12 @@ import {HomeRoutingModule} from "./home-routing.module";
 import {SignupComponent} from "./signup/signup.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import {NgIf} from "@angular/common";
+import { SigningComponent } from './signin/signing.component';
 
 
 
 @NgModule({
-  declarations: [HomeComponent, SignupComponent],
+  declarations: [HomeComponent, SignupComponent, SigningComponent],
   imports: [
     CommonComponentModule,
     HomeRoutingModule,

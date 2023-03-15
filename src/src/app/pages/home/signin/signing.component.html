@@ -1,0 +1,15 @@
+<div class="bg-image"></div>
+<app-nav></app-nav>
+<section class="content">
+  <form class="signing" novalidate (ngSubmit)="onSubmit()" [formGroup]="signing" >
+    <label for="email">Adresse email : </label>
+    <input type="email" name="email" id="email" required formControlName="email">
+    <label for="password">Mot de passe : </label>
+    <input type="password" name="password" id="password" required formControlName="password">
+    <button type="submit">Connexion</button>
+
+    <div class="error-login" *ngIf="this.error">
+      Les identifiants sont incorrects
+    </div>
+  </form>
+</section>

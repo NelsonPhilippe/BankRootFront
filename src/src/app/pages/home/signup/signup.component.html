@@ -13,11 +13,9 @@
     <label for="confirm-password">Confirmer le mot de passe : </label>
     <input type="password" name="confirm-password" id="confirm-password" required formControlName="confirmedPassword">
     <button type="submit">Inscription</button>
-    <div *ngIf="this.signup.value['firstname'] === undefined">
-      Name is required.
-    </div>
-    <div *ngIf="this.signup.value['password'] !== this.signup.value['confirmedPassword']">
-      Name must be at least 4 characters long.
+
+    <div class="error-login" *ngIf="this.signup.value['password'] !== this.signup.value['confirmedPassword']">
+      Le mot de passe et la confirmation ne correspondent pas
     </div>
   </form>
 </section>

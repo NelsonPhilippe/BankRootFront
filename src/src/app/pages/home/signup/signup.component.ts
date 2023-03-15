@@ -13,10 +13,10 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
     this.signup = new FormGroup({
       firstname : new FormControl(),
-      name : new FormControl(),
+      lastname : new FormControl(),
       email : new FormControl(),
       password : new FormControl(),
-      confirmPassword : new FormControl(),
+      confirmedPassword : new FormControl(),
     })
   }
 

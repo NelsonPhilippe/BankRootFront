@@ -1,6 +1,5 @@
 @import '../../../vars/variables';
 
-
 .content {
   display: flex;
   align-items: center;
@@ -8,7 +7,7 @@
   height: 90vh;
   width: 100vw;
 
-  .signup {
+  .signing {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -43,18 +42,14 @@
 
     button {
       width: 40%;
-      margin: 0 auto;
+      margin: 2rem auto 0 auto;
       border-radius: 10px;
       padding: 5px;
       color: white;
       border: none;
-      background-color: #634597;
+      background-color: #2E7D32;
     }
   }
-}
-
-#password, #confirm-password {
-  width: 65%;
 }
 
 .error-login {
