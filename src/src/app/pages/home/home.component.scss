@@ -1,0 +1,34 @@
+@import '../../vars/variables';
+
+body {
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 90vh;
+
+  a {
+    margin: 2rem;
+    color: white;
+    font-family: $font;
+    font-size: larger;
+    padding: 10px;
+    width: 40%;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+  }
+}
+
+#signing {
+  background-color: #634597;
+}
+
+#signup {
+  background-color: #21529E;
+}
+
