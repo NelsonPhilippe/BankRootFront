@@ -14,6 +14,7 @@ Ce projet a pour but de m'initier à Angular et de créer un petit panel pour un
 
 Le front essaiera de se rapprocher au maximum de la maquette suivante : [BankRoot](https://www.figma.com/file/fvSsWWX8PFN02qwNWpV5Gg/BankRoot?node-id=0%3A1&t=mtQ1TCooMU6BMZan-1)
 
+Le projet se servira du backend NestJS BankRootBack : [BankRootBack](https://github.com/Simplon-hdf/BankRootAPI-NN)
 </div>
 
 ## About The Project
