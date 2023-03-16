@@ -16,8 +16,8 @@ body {
     color: white;
     font-family: $font;
     font-size: larger;
-    padding: 10px;
-    width: 40%;
+    padding: 20px;
+    width: 50%;
     border-radius: 10px;
     text-align: center;
     text-decoration: none;
@@ -32,7 +32,7 @@ body {
   background-color: #21529E;
 }
 
-@media (min-width: 390px) {
+@media (min-width: 590px) {
   .bg-pullout {
     position: absolute;
     right: 0;
@@ -56,18 +56,15 @@ body {
     }
   }
 }
-
-@media (min-width: 390px) {
-  .bg-image {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    width: 100vw;
-    background: rgb(2,0,36);
-    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(213,213,213,1) 0%, rgba(113,113,113,1) 100%);
-    background-size: cover;
-    z-index: -1;
-  }
+.bg-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgb(2,0,36);
+  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(213,213,213,1) 0%, rgba(113,113,113,1) 100%);
+  background-size: cover;
+  z-index: -1;
 }
 

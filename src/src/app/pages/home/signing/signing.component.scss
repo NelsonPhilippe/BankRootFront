@@ -21,7 +21,7 @@
 
     label {
       font-family: $font;
-      font-size: small;
+      font-size: medium;
       margin: 0 0 10px 0;
       overflow: hidden;
     }
@@ -43,15 +43,28 @@
     }
 
     button {
-      width: 40%;
+      width: 50%;
       margin: 2rem auto 0 auto;
       border-radius: 10px;
-      padding: 5px;
+      padding: 20px;
       color: white;
       border: none;
       background-color: #2E7D32;
+      font-size: medium;
     }
   }
+}
+
+.bg-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgb(2,0,36);
+  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(213,213,213,1) 0%, rgba(113,113,113,1) 100%);
+  background-size: cover;
+  z-index: -1;
 }
 
 .error-login {
@@ -61,6 +74,6 @@
   margin: 20px 0 10px 0;
 }
 
-@media (min-width: 390px) {
+@media (min-width: 590px) {
   @include login-page(signing);
 }

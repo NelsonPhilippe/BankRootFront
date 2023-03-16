@@ -1,5 +1,5 @@
 <div class="bg-image"></div>
-<app-nav></app-nav>
+<app-nav [connected]=false></app-nav>
 <section class="content">
   <form class="signing" novalidate (ngSubmit)="onSubmit()" [formGroup]="signing" >
     <label for="email">Adresse email : </label>
