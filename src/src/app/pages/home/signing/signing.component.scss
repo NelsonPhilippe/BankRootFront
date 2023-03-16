@@ -1,4 +1,5 @@
 @import '../../../vars/variables';
+@import "../../../vars/function";
 
 .content {
   display: flex;
@@ -12,7 +13,7 @@
     justify-content: center;
     flex-direction: column;
     width: 65%;
-    height: 60%;
+    height: 70%;
     color: white;
     background-color: $secondary-color;
     padding: 2rem;
@@ -22,6 +23,7 @@
       font-family: $font;
       font-size: small;
       margin: 0 0 10px 0;
+      overflow: hidden;
     }
 
     input {
@@ -57,4 +59,8 @@
   font-family: $font;
   font-size: small;
   margin: 20px 0 10px 0;
+}
+
+@media (min-width: 390px) {
+  @include login-page(signing);
 }

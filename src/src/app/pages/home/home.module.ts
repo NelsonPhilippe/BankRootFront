@@ -5,7 +5,7 @@ import {HomeRoutingModule} from "./home-routing.module";
 import {SignupComponent} from "./signup/signup.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import {NgIf} from "@angular/common";
-import { SigningComponent } from './signin/signing.component';
+import { SigningComponent } from './signing/signing.component';
 
 
 

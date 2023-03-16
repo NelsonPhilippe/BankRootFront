@@ -1,4 +1,5 @@
 @import '../../../vars/variables';
+@import "../../../vars/function";
 
 
 .content {
@@ -23,6 +24,7 @@
       font-family: $font;
       font-size: small;
       margin: 0 0 10px 0;
+      overflow: hidden;
     }
 
     input {
@@ -65,38 +67,5 @@
 }
 
 @media (min-width: 390px) {
-  .bg-image {
-    background-position: initial;
-    background-size: cover;
-    padding: 0;
-    margin: 0;
-
-  }
-  .content {
-    .signup {
-      width: 40%;
-
-      label {
-        font-size: large;
-      }
-
-      input {
-        height: 40px;
-        font-size: large;
-        padding: 5px 10px;
-
-
-        &:focus {
-          outline: none;
-          padding: 5px 10px;
-        }
-      }
-      button {
-        width: 30%;
-        padding: 10px;
-        font-size: large;
-        margin-top: 30px;
-      }
-    }
-  }
+  @include login-page(signup);
 }
