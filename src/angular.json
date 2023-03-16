@@ -65,10 +65,13 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "BankRootFront:build:production"
+              "browserTarget": "BankRootFront:build:production",
+              "proxyConfig": "src/proxy.conf.json"
+
             },
             "development": {
-              "browserTarget": "BankRootFront:build:development"
+              "browserTarget": "BankRootFront:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

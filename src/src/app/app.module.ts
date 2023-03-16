@@ -7,6 +7,7 @@ import {HomeModule} from "./pages/home/home.module";
 import { UsersComponent } from './pages/users/users.component';
 import {UsersModule} from "./pages/users/users.module";
 import { UsersNavComponent } from './components/users-nav/users-nav.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { UsersNavComponent } from './components/users-nav/users-nav.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     HomeModule,
     UsersModule
