@@ -63,7 +63,7 @@ body {
   height: 100vh;
   width: 100vw;
   background: rgb(2,0,36);
-  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(213,213,213,1) 0%, rgba(113,113,113,1) 100%);
+  background: $backgroud-gradiant;
   background-size: cover;
   z-index: -1;
 }
