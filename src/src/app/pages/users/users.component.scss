@@ -4,9 +4,23 @@
 .content {
   display: flex;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   flex-direction: column;
   background: $backgroud-gradiant;
+
+  .logo {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 100%;
+    background-color: gray;
+    height: 8vh;
+    width: 8vh;
+    top: 20px;
+    left: 2vw;
+  }
 
   .solde {
     position: relative;
@@ -15,7 +29,7 @@
     color: white;
     font-family: $font;
     font-size: xx-large;
-    margin-top: 10vh;
+    margin-top: 15vh;
 
     h2 {
       display: flex;
@@ -64,16 +78,17 @@
       font-size: 24px;
       font-weight: bold;
       margin-bottom: 10px;
-
     }
 
     .content-transaction {
+      z-index: 1;
+      border-radius: 20px;
 
       table {
         width: 100%;
+        height: 100%;
         border-collapse: collapse;
         font-size: 14px;
-        margin-top: 20px;
 
         thead {
           background-color: #f0f0f0;
@@ -100,14 +115,25 @@
         th:last-child,
         td:last-child {
           width: 20%;
-          text-align: right;
+          text-align: left;
         }
 
         tbody {
+          width: 100%;
+
           tr {
             background-color: #071A2E;
             color: white;
             font-family: $font;
+            height: 5vh;
+            width: 100%;
+
+            td {
+              padding: 10px;
+              border-bottom: 1px solid #ccc;
+              text-align: left;
+              margin: auto 0;
+            }
           }
         }
       }
@@ -153,5 +179,50 @@
         }
       }
     }
+  }
+}
+
+@media  (min-width: 600px){
+  .content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    font-size: larger;
+    font-weight: bold;
+
+    .solde {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      grid-area: 1 / 1 / 2 / 2;
+      width: 70%;
+      height: 20%;
+    }
+
+    .comptes {
+      position: absolute;
+      grid-area: 2 / 1 / 3 / 2;
+      width: 70%;
+      height: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 1rem;
+    }
+
+    .transactions {
+      grid-area: 1 / 2 / 3 / 3;
+      width: 70%;
+      height: 60%;
+      margin: auto;
+      font-size: xx-large;
+
+    }
+
+
   }
 }

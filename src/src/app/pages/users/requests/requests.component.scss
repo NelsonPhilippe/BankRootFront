@@ -1,0 +1,23 @@
+@import '../../../vars/variables';
+
+
+.content{
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: $backgroud-gradiant;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+
+  h2 {
+    margin-top: 15vh;
+  }
+
+  .table {
+    margin-top: 20vh;
+    width: 80%;
+  }
+
+}
+
