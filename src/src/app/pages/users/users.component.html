@@ -6,7 +6,7 @@
   </div>
   <section class="solde">
     <div class="solde-num">
-      <h2>0</h2>
+      <h2>{{solde}}</h2>
     </div>
     <div class="solde-devise">
       <h2>$</h2>
@@ -19,20 +19,13 @@
         <thead>
         <tr>
           <th>Date</th>
-          <th>Description</th>
           <th>Montant</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>00/00/00</td>
-          <td>blabla</td>
-          <td>0 €</td>
-        </tr>
-        <tr>
-          <td>00/00/00</td>
-          <td>blabla</td>
-          <td>0 €</td>
+        <tr *ngFor="let transaction of transactions">
+          <td>{{ transaction.created_at }}</td>
+          <td *ngIf="transaction.type === 'deposit'"> + {{ transaction.amount }} €</td>
         </tr>
         </tbody>
       </table>
@@ -43,8 +36,8 @@
     <div class="content-account">
       <table>
         <tbody>
-        <tr>
-          <td class="account-amount">0 €</td>
+        <tr *ngFor="let account of accounts">
+          <td class="account-amount">{{ account.currency }} €</td>
           <td class="account-type">Livret A</td>
         </tr>
 

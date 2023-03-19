@@ -6,11 +6,14 @@ import {SignupComponent} from "./signup/signup.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import {NgIf} from "@angular/common";
 import { SigningComponent } from './signing/signing.component';
+import {httpInterceptorProviders} from "../../http-interceptors";
+import {AuthService} from "../../services/auth.service";
 
 
 
 @NgModule({
   declarations: [HomeComponent, SignupComponent, SigningComponent],
+  providers: [AuthService, httpInterceptorProviders],
   imports: [
     CommonComponentModule,
     HomeRoutingModule,
