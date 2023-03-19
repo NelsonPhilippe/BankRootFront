@@ -10,7 +10,8 @@ import {HttpService} from "../../../services/http.service";
 })
 export class RequestsComponent implements OnInit{
 
-  private requests!: any[];
+  requests!: any[];
+  showMenu!: Map<string, boolean>;
 
   constructor(private http: HttpService, private authService: AuthService) {
   }
@@ -19,8 +20,11 @@ export class RequestsComponent implements OnInit{
     const user = await this.getUser();
     console.log(user)
     const requests = await this.getRequests(user.uuid);
-    console.log(requests)
-
+    this.requests = requests;
+    this.showMenu = new Map<string, boolean>();
+    for(const request of requests) {
+      this.showMenu.set(request.id, false);
+    }
 
   }
 
@@ -40,5 +44,9 @@ export class RequestsComponent implements OnInit{
         resolve(data.data);
       });
     });
+  }
+
+  toggleMenu(id: string) {
+    this.showMenu.set(id, !this.showMenu.get(id));
   }
 }

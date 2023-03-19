@@ -18,6 +18,12 @@
   .table {
     margin-top: 20vh;
     width: 80%;
+
+    .menu {
+      .hidden {
+        display: none;
+      }
+    }
   }
 
 }
