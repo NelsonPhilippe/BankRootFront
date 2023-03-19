@@ -16,8 +16,8 @@ body {
     color: white;
     font-family: $font;
     font-size: larger;
-    padding: 10px;
-    width: 40%;
+    padding: 20px;
+    width: 50%;
     border-radius: 10px;
     text-align: center;
     text-decoration: none;
@@ -30,5 +30,41 @@ body {
 
 #signup {
   background-color: #21529E;
+}
+
+@media (min-width: 590px) {
+  .bg-pullout {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 80vh;
+    width: 70vw;
+    background-image: url("../../../assets/bg-pullout.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+    z-index: -1;
+  }
+
+  .content {
+    align-items: flex-start;
+    margin-left: 20%;
+    a {
+      width: 20%;
+      padding: 20px;
+    }
+  }
+}
+.bg-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgb(2,0,36);
+  background: $backgroud-gradiant;
+  background-size: cover;
+  z-index: -1;
 }
 

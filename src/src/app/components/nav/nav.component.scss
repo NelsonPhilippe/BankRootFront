@@ -10,6 +10,8 @@ nav {
   height: 10vh;
 
   .logo{
+    position: absolute;
+    left: 2vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,13 +19,47 @@ nav {
     width: 8vh;
     overflow: hidden;
     border-radius: 100%;
-    background-color: red;
-    margin: 0 2vw;
     background-color: gray;
+  }
 
-    img{
-      height: 120%;
-      width: 120%;
+  .content-nav {
+    ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100vw;
+      justify-content: space-around;
+      align-items: center;
+
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+
+        a {
+          color: white;
+          text-decoration: none;
+          font-size: medium;
+          font-weight: 600;
+          overflow: hidden;
+
+          &:after {
+            display: block;
+            content: '';
+            transform: scale(0);
+            transition:  transform 0.3s ease-in-out;
+            border-bottom: solid 5px white;
+          }
+          &:hover:after {
+            transform: scaleX(1);
+          }
+        }
+      }
     }
   }
 }

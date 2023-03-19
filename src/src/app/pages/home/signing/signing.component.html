@@ -1,9 +1,9 @@
 <div class="bg-image"></div>
-<app-nav></app-nav>
+<app-nav [connected]=false></app-nav>
 <section class="content">
-  <form class="signing" novalidate (ngSubmit)="onSubmit()" [formGroup]="signing" >
-    <label for="email">Adresse email : </label>
-    <input type="email" name="email" id="email" required formControlName="email">
+  <form class="signing" novalidate (ngSubmit)="onSubmit($event)" [formGroup]="signing" >
+    <label for="mail">Adresse email : </label>
+    <input type="email" name="mail" id="mail" required formControlName="mail">
     <label for="password">Mot de passe : </label>
     <input type="password" name="password" id="password" required formControlName="password">
     <button type="submit">Connexion</button>
