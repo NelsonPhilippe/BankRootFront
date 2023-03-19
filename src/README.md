@@ -1,27 +1,57 @@
 # BankRootFront
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
+## Cloner le projet Github
+1. Ouvrez un terminal et accédez au dossier dans lequel vous souhaitez cloner le projet.
 
-## Development server
+2. Exécutez la commande suivante pour cloner le projet :
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```bash
+git clone https://github.com/NelsonPhilippe/BankRootFront.git
+```
 
-## Code scaffolding
+3. Une fois le projet cloné, accédez au dossier du projet en exécutant la commande suivante :
+```bash
+cd BankRootFront
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installer les dépendances via NPM
 
-## Build
+1. Assurez-vous que Node.js et NPM sont installés sur votre machine.
+2. Exécutez la commande suivante pour installer les dépendances via NPM :
+```bash
+npm install
+```
+Cette commande téléchargera et installera toutes les dépendances nécessaires pour exécuter le projet.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Lancer l'application Angular
 
-## Running unit tests
+1. Assurez-vous que vous êtes dans le dossier du projet.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Exécutez la commande suivante pour lancer l'application Angular :
 
-## Running end-to-end tests
+```bash
+npm run start ou npx ng serve
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Cette commande démarrera un serveur de développement et ouvrira l'application dans votre navigateur par défaut.
 
-## Further help
+Vous devriez maintenant être en mesure de visualiser l'application dans votre navigateur et de commencer à explorer ses différentes fonctionnalités.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+L'application est par defaut sur le port 4200, vous pouvez le changer dans le fichier `angular.json` dans la partie `serve` et `options` :
+
+```json
+"serve": {
+  "builder": "@angular-devkit/build-angular:dev-server",
+  "options": {
+    "browserTarget": "BankRootFront:build",
+    "port": 4200
+  },
+  "configurations": {
+    "production": {
+      "browserTarget": "BankRootFront:build:production"
+    }
+  }
+}
+```
+
+
