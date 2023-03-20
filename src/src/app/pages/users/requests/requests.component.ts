@@ -21,6 +21,7 @@ export class RequestsComponent implements OnInit{
     console.log(user)
     const requests = await this.getRequests(user.uuid);
     this.requests = requests;
+    console.log(requests);
     this.showMenu = new Map<string, boolean>();
     for(const request of requests) {
       this.showMenu.set(request.id, false);
@@ -46,7 +47,36 @@ export class RequestsComponent implements OnInit{
     });
   }
 
-  toggleMenu(id: string) {
-    this.showMenu.set(id, !this.showMenu.get(id));
+  toggleMenu(event: MouseEvent, id: string) {
+    const menuElement = document.getElementById('menu-' + id);
+    const rowElement = document.getElementById('row-' + id);
+    if(menuElement === null || rowElement === null ) {
+      return;
+    }
+
+    const style = window.getComputedStyle(menuElement).display;
+
+    if(style === 'none') {
+      menuElement.style.display = 'flex';
+      rowElement.style.height = '20%';
+      return;
+    }
+    menuElement.style.display = 'none';
+    rowElement.style.height = '10%';
+
+  }
+
+  delete(id: string) {
+    const rowElement = document.getElementById('row-' + id);
+    const menuElement = document.getElementById('menu-' + id);
+    if(menuElement === null || rowElement === null ) {
+      return;
+    }
+    rowElement.remove();
+    menuElement.remove();
+
+    this.http.deleteAccountRequest(id).subscribe((data: any) => {
+      console.log(data);
+    });
   }
 }

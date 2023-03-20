@@ -10,12 +10,21 @@
   justify-content: center;
 
   .container {
+    position: relative;
     display: flex;
     flex-direction: column;
     z-index: 2;
     height: 60%;
     width: 100%;
     color: white;
+
+    .create-request {
+      position: absolute;
+      right: 5%;
+      background-color: #2E7D32;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+    }
 
     h2 {
       font-family: $font;
@@ -24,59 +33,82 @@
     }
 
     .request-table {
+      display: flex;
+      flex-direction: column;
       flex-grow: 1;
       background-color: #D9D9D9;
 
-      table {
+      .l-head {
         width: 100%;
-        color: black;
-        table-layout:fixed;
+        height: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: row;
+        background-color: #646464;
 
-        thead {
-          font-family: $font;
-          font-size: 1.2rem;
-          background-color: #acacac;
-          line-height: 4rem;
+        li {
+          font: $font;
+          color: white;
+          padding: 0 5%;
+          text-align: center;
+        }
+      }
 
-          tr {
-            height: 90%;
+      .row {
+        position: relative;
+        height: 10%;
+        transition: height 0.1s ease-in-out;
+        overflow: hidden;
 
-            th {
-              text-align: center;
-              vertical-align: middle;
-              width: 35%;
-            }
+        ul {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          width: 100%;
+          color: black;
+          text-align: center;
+
+          li{
+            padding: 20px;
+            width: 20%;
+            overflow-x: hidden;
+          }
+
+          #validate {
+            background-color: #2E7D32;
+            padding: 10px;
+          }
+
+          #pending {
+            background-color: #634597;
+            padding: 10px;
+            border-radius: 50px;
+            color: #D9D9D9;
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+
+        }
+        &:nth-child(odd) {
+          background-color: #b5b5b5;
+        }
+        .menu {
+          display: none;
+          height: 50%;
+          width: 100%;
+          align-items: center;
+          button{
+            margin: 0 5%;
+            background-color: #21529E;
+            width: 10%;
+            height: 60%;
+            border-radius: 10px;
           }
         }
 
-        tbody {
-          height: 90%;
-          tr {
-            line-height: 4rem;
-            width: 100%;
-            text-align: center;
-
-            &:nth-child(even) {
-              background-color: #f2f2f2;
-            }
-
-            td {
-              .pending {
-                padding: 10px;
-                background-color: #634597;
-                border-radius: 20px;
-                color: white;
-              }
-
-              .validate {
-                padding: 10px;
-                background-color: #2E7D32;
-                border-radius: 20px;
-                color: white;
-              }
-            }
-          }
-        }
       }
     }
   }

@@ -3,27 +3,26 @@
 <section class="content">
   <div class="container">
     <h2>Demandes</h2>
+    <button class="create-request">Creer</button>
     <div class="request-table">
-      <table>
-        <thead>
-          <tr>
-            <th scope="col">Date</th>
-            <th scope="col">Description</th>
-            <th scope="col">Status</th>
-
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let request of requests">
-            <td>{{request.created_at}}</td>
-            <td>{{request.content}}</td>
-            <td>
-              <span class="validate" *ngIf="request.status">Validé</span>
-              <span class="pending" *ngIf="!request.status">En cours de traitement</span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <ul class="l-head">
+        <li>Date</li>
+        <li>Type</li>
+        <li>Description</li>
+        <li>Statut</li>
+      </ul>
+      <div class="row" id="row-{{request.id}}" *ngFor="let request of requests">
+        <ul (click)="toggleMenu($event, request.id)">
+          <li>{{request.created_at | date: 'dd/mm/yyy' }}</li>
+          <li>{{request.request_type}}</li>
+          <li>{{request.content}}</li>
+          <li id="pending" *ngIf="!request.status">En attente</li>
+          <li id="validate" *ngIf="request.status">Validé</li>
+        </ul>
+        <div id="menu-{{request.id}}" class="menu">
+          <button class="btn btn-danger" (click)="delete(request.id)" >Supprimer</button>
+        </div>
+      </div>
     </div>
   </div>
 </section>

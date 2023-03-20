@@ -46,4 +46,8 @@ export class HttpService {
   getAccountRequestByUser(uuid: string) {
     return this.http.get(`/api/account-request/${uuid}`, this.httpOptions);
   }
+
+  deleteAccountRequest(id: string) {
+    return this.http.delete(`/api/account-request/${id}`, this.httpOptions);
+  }
 }
