@@ -112,5 +112,92 @@
       }
     }
   }
+
+  .modal-request {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* rend le fond semi-transparent */
+    z-index: 999; /* assure que la modale est au-dessus de tout */
+
+    .content-modal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      width: 80%;
+      max-width: 600px;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* ajoute une ombre pour la profondeur */
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+        h2 {
+          margin: 0;
+        }
+
+        .close {
+          border: none;
+          background-color: transparent;
+          font-size: 1.5rem;
+          cursor: pointer;
+        }
+      }
+
+      .body {
+        form {
+          .form-group {
+            margin-bottom: 20px;
+
+            label {
+              display: block;
+              margin-bottom: 5px;
+            }
+
+            select {
+              display: block;
+              width: 100%;
+              padding: 10px;
+              font-size: 1rem;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+              background-color: #fff;
+            }
+
+            textarea {
+              display: block;
+              width: 100%;
+              padding: 10px;
+              font-size: 1rem;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+              background-color: #fff;
+              height: 100px; /* ajuste la hauteur du champ de texte */
+              resize: vertical; /* autorise le redimensionnement vertical */
+            }
+
+            button[type="submit"] {
+              background-color: #007bff; /* définit la couleur de fond du bouton */
+              color: #fff; /* définit la couleur du texte */
+              border: none; /* supprime la bordure */
+              border-radius: 5px; /* arrondit les coins */
+              padding: 10px 20px; /* ajoute de l'espace autour du texte */
+              font-size: 1rem; /* définit la taille de police */
+              cursor: pointer; /* change le curseur de la souris pour indiquer que le bouton est cliquable */
+            }
+          }
+        }
+      }
+    }
+  }
 }
 

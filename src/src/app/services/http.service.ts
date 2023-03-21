@@ -50,4 +50,8 @@ export class HttpService {
   deleteAccountRequest(id: string) {
     return this.http.delete(`/api/account-request/${id}`, this.httpOptions);
   }
+
+  createAccountRequest(data: any) {
+    return this.http.post('/api/account-request', data, this.httpOptions);
+  }
 }

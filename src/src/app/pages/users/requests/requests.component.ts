@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {AuthService} from "../../../services/auth.service";
 import {HttpService} from "../../../services/http.service";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-requests',
@@ -11,21 +12,72 @@ import {HttpService} from "../../../services/http.service";
 export class RequestsComponent implements OnInit{
 
   requests!: any[];
-  showMenu!: Map<string, boolean>;
+
+  request!: FormGroup;
 
   constructor(private http: HttpService, private authService: AuthService) {
+
   }
 
   async ngOnInit(): Promise<void> {
+
+    this.request = new FormGroup({
+      type: new FormControl(),
+      content: new FormControl(),
+    });
+
     const user = await this.getUser();
     console.log(user)
     const requests = await this.getRequests(user.uuid);
     this.requests = requests;
     console.log(requests);
-    this.showMenu = new Map<string, boolean>();
-    for(const request of requests) {
-      this.showMenu.set(request.id, false);
+
+
+
+  }
+
+  async onSubmit(event: Event) {
+    event.preventDefault();
+    const {type, content} = this.request.value;
+    const user = await this.getUser();
+
+    this.createRequest(type, content);
+    const modal = document.getElementById('modal-request');
+    if(modal !== null) {
+      modal.style.display = 'none';
     }
+
+    console.log(this.requests);
+  }
+
+  openModal() {
+    const modal = document.getElementById('modal-request');
+    if(modal !== null) {
+      modal.style.display = 'block';
+    }
+  }
+
+  closeModal() {
+    const modal = document.getElementById('modal-request');
+    if(modal !== null) {
+      modal.style.display = 'none';
+    }
+  }
+
+  async createRequest(type: string, content: string) {
+    const user = await this.getUser();
+    return new Promise<any>((resolve, reject) => {
+      this.http.createAccountRequest({
+        uuid: user.uuid,
+        content: content,
+        type: type,
+      }).subscribe(async (data: any) => {
+        const requests = await this.getRequests(user.uuid);
+        this.requests = requests;
+        console.log(data);
+        resolve(data);
+      });
+    })
 
   }
 
@@ -33,6 +85,7 @@ export class RequestsComponent implements OnInit{
     return new Promise<any>((resolve, reject) => {
       this.http.getProfile().subscribe((data: any) => {
         this.http.getProfileById(data.sub).subscribe((data: any) => {
+
           resolve(data);
         });
       });

@@ -3,7 +3,7 @@
 <section class="content">
   <div class="container">
     <h2>Demandes</h2>
-    <button class="create-request">Creer</button>
+    <button class="create-request" (click)="openModal()">Creer</button>
     <div class="request-table">
       <ul class="l-head">
         <li>Date</li>
@@ -22,6 +22,33 @@
         <div id="menu-{{request.id}}" class="menu">
           <button class="btn btn-danger" (click)="delete(request.id)" >Supprimer</button>
         </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-request" class="modal-request">
+    <div class="content-modal">
+      <div class="header">
+        <h2>Creer une demande</h2>
+        <button class="close" (click)="closeModal()" >X</button>
+      </div>
+      <div class="body">
+        <form (ngSubmit)="onSubmit($event)" [formGroup]="request" >
+          <div class="form-group">
+            <label for="type">Type</label>
+            <select class="form-control" id="type" formControlName="type">
+              <option value="OVERDRAFT_LIMIT">Limite de découvert</option>
+              <option value="WITHDRAWAL_LIMIT">Limite de retrait</option>
+              <option value="PAYMENT_CEILING">Limite de paiement</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="content">Contenu de la demande</label>
+            <textarea class="form-control" id="content" formControlName="content"></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Valider</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
