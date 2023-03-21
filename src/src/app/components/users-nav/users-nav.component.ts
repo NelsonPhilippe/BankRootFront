@@ -31,5 +31,19 @@ export class UsersNavComponent implements OnInit{
     this.desktop = event.target.innerWidth >= 600;
   }
 
+  showProfile(event: MouseEvent) {
+    event.preventDefault();
+    const dropdown = document.getElementById('dropdown');
+
+    if(dropdown == null) {
+      return;
+    }
+
+    if(dropdown.style.height == '0px' || dropdown.style.height == '') {
+      dropdown.style.height = '9rem';
+      return;
+    }
+    dropdown.style.height = 0 + 'px';
+  }
 
 }

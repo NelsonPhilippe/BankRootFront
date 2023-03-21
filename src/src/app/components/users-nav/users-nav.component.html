@@ -9,7 +9,15 @@
     <ul>
       <li><button [routerLink]="['/users']"  ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M19 21H5a1 1 0 0 1-1-1v-9H1l10.327-9.388a1 1 0 0 1 1.346 0L23 11h-3v9a1 1 0 0 1-1 1zm-6-2h5V9.157l-6-5.454-6 5.454V19h5v-6h2v6z" fill="rgba(255,255,255,1)"/></svg></button></li>
       <li><button [routerLink]="['/users/requests']" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><path fill="none" d="M0 0h24v24H0z"/><path d="M5 2h14a1 1 0 0 1 1 1v19.143a.5.5 0 0 1-.766.424L12 18.03l-7.234 4.536A.5.5 0 0 1 4 22.143V3a1 1 0 0 1 1-1zm13 2H6v15.432l6-3.761 6 3.761V4z" fill="rgba(255,255,255,1)"/></svg></button></li>
-      <li><button [routerLink]="['/users/profile']"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 22a8 8 0 1 1 16 0h-2a6 6 0 1 0-12 0H4zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" fill="rgba(255,255,255,1)"/></svg></button></li>
+      <li>
+        <button (click)="showProfile($event)" ><img src="./assets/icom-user.png" alt=""></button>
+        <ul id="dropdown" class="dropdown">
+          <li [routerLink]="['/users/profile']">Profile</li>
+          <li [routerLink]="['/users/profile']">Transactions</li>
+          <li [routerLink]="['/users/profile']">Admin</li>
+        </ul>
+      </li>
+
     </ul>
   </div>
 
@@ -21,7 +29,7 @@
     <ul>
       <li><a [routerLink]="['/users']">Home</a></li>
       <li><a [routerLink]="['/users/requests']">Demandes</a></li>
-      <li><a [routerLink]="['/users/profile']">Profiles</a></li>
+      <li id="profile"><a [routerLink]="['/users/profile']"><img src="./assets/icom-user.png" alt=""></a></li>
     </ul>
   </div>
 

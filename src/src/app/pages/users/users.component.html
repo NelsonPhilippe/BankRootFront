@@ -7,7 +7,10 @@
     </div>
     <section class="solde">
       <div class="solde-num">
-        <h2>{{solde}}</h2>
+        <h2 *ngIf="solde! < 1000">{{solde}}</h2>
+        <h2 *ngIf="solde! >= 1000">{{solde}} K</h2>
+        <h2 *ngIf="solde! >= 100000000">{{solde}} K</h2>
+
       </div>
       <div class="solde-devise">
         <h2>$</h2>
