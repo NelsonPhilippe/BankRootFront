@@ -57,7 +57,7 @@
 
       .row {
         position: relative;
-        height: 10%;
+        height: 20%;
         transition: height 0.1s ease-in-out;
         overflow: hidden;
 
@@ -68,9 +68,9 @@
           width: 100%;
           color: black;
           text-align: center;
+          padding: 5px;
 
           li{
-            padding: 20px;
             width: 20%;
             overflow-x: hidden;
           }
@@ -103,7 +103,7 @@
           button{
             margin: 0 5%;
             background-color: #21529E;
-            width: 10%;
+            width: 40%;
             height: 60%;
             border-radius: 10px;
           }
@@ -193,6 +193,31 @@
               padding: 10px 20px; /* ajoute de l'espace autour du texte */
               font-size: 1rem; /* définit la taille de police */
               cursor: pointer; /* change le curseur de la souris pour indiquer que le bouton est cliquable */
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .content {
+    .container {
+      .request-table {
+        .row {
+          height: 10%;
+          .menu {
+            display: none;
+            height: 50%;
+            width: 100%;
+            align-items: center;
+            button{
+              margin: 0 5%;
+              background-color: #21529E;
+              width: 10%;
+              height: 60%;
+              border-radius: 10px;
             }
           }
         }

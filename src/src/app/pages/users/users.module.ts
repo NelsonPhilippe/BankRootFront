@@ -7,11 +7,12 @@ import { RequestsComponent } from './requests/requests.component';
 import {httpInterceptorProviders} from "../../http-interceptors";
 import {AuthService} from "../../services/auth.service";
 import {ReactiveFormsModule} from "@angular/forms";
+import { ProfileComponent } from './profile/profile.component';
 
 
 
 @NgModule({
-  declarations: [UsersComponent, RequestsComponent],
+  declarations: [UsersComponent, RequestsComponent, ProfileComponent],
   providers: [AuthService, httpInterceptorProviders],
   imports: [
     CommonModule,

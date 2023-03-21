@@ -21,14 +21,14 @@ export class UsersNavComponent implements OnInit{
   }
   ngOnInit(): void {
     console.log(window.innerWidth);
-    this.desktop = window.innerWidth > 600;
+    this.desktop = window.innerWidth >= 600;
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     console.log(event.innerWidth);
 
-    this.desktop = event.target.innerWidth > 600;
+    this.desktop = event.target.innerWidth >= 600;
   }
 
 

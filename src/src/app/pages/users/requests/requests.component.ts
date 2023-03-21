@@ -110,12 +110,23 @@ export class RequestsComponent implements OnInit{
     const style = window.getComputedStyle(menuElement).display;
 
     if(style === 'none') {
-      menuElement.style.display = 'flex';
-      rowElement.style.height = '20%';
+      if(window.innerHeight >= 600) {
+        menuElement.style.display = 'flex';
+        rowElement.style.height = '20%';
+      }else {
+        menuElement.style.display = 'flex';
+        rowElement.style.height = '40%';
+      }
+
       return;
     }
-    menuElement.style.display = 'none';
-    rowElement.style.height = '10%';
+    if (window.innerWidth <= 600) {
+      menuElement.style.display = 'none';
+      rowElement.style.height = '20%';
+    }else {
+      menuElement.style.display = 'none';
+      rowElement.style.height = '10%';
+    }
 
   }
 
