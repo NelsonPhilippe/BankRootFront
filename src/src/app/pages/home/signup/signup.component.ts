@@ -55,7 +55,7 @@ export class SignupComponent implements OnInit {
           mail: email,
           password: password
         }).subscribe((data: any) => {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/users']);
 
         });
       }

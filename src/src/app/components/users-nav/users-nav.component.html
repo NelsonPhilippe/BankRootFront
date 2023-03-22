@@ -29,7 +29,14 @@
     <ul>
       <li><a [routerLink]="['/users']">Home</a></li>
       <li><a [routerLink]="['/users/requests']">Demandes</a></li>
-      <li id="profile"><a [routerLink]="['/users/profile']"><img src="./assets/icom-user.png" alt=""></a></li>
+      <li class="profile">
+        <button><img src="./assets/icom-user.png" alt=""></button>
+<!--        <ul id="dropdown-desktop" class="dropdown">-->
+<!--          <li [routerLink]="['/users/profile']">Profile</li>-->
+<!--          <li [routerLink]="['/users/profile']">Transactions</li>-->
+<!--          <li [routerLink]="['/users/profile']">Admin</li>-->
+<!--        </ul>-->
+      </li>
     </ul>
   </div>
 

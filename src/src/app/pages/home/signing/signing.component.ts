@@ -20,7 +20,7 @@ export class SigningComponent implements OnInit{
   ngOnInit(): void {
 
     if(this.authService.getToken()) {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/users']);
     }
 
     this.signing = new FormGroup({

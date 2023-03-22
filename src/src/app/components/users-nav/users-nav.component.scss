@@ -95,6 +95,7 @@ nav {
     }
 
     .content-nav-desktop {
+      height: 100%;
       ul {
         display: flex;
         list-style: none;
@@ -105,12 +106,16 @@ nav {
         justify-content: center;
         align-items: center;
 
+
+
         li {
           display: flex;
           justify-content: center;
           align-items: center;
           height: 100%;
           cursor: pointer;
+
+
 
           a {
             color: white;
@@ -129,6 +134,24 @@ nav {
 
             &:hover:after {
               transform: scaleX(1);
+            }
+          }
+        }
+
+        .profile {
+          position: absolute;
+          right: 2vw;
+          height: 8vh;
+          width: 8vh;
+
+          button {
+            width: 100%;
+            height: 100%;
+
+            img {
+              height: auto;
+              max-width: 100%;
+              border-radius: 100%;
             }
           }
         }
