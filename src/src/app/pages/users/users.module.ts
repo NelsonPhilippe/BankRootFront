@@ -8,6 +8,7 @@ import {httpInterceptorProviders} from "../../http-interceptors";
 import {AuthService} from "../../services/auth.service";
 import {ReactiveFormsModule} from "@angular/forms";
 import { ProfileComponent } from './profile/profile.component';
+import {IonicModule} from "@ionic/angular";
 
 
 
@@ -16,9 +17,10 @@ import { ProfileComponent } from './profile/profile.component';
   providers: [AuthService, httpInterceptorProviders],
   imports: [
     CommonModule,
-    CommonComponentModule,
     UsersRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonComponentModule,
+
   ],
   exports: [UsersComponent]
 })

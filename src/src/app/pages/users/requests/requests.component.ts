@@ -27,10 +27,8 @@ export class RequestsComponent implements OnInit{
     });
 
     const user = await this.getUser();
-    console.log(user)
     const requests = await this.getRequests(user.uuid);
     this.requests = requests;
-    console.log(requests);
 
 
 
@@ -74,7 +72,6 @@ export class RequestsComponent implements OnInit{
       }).subscribe(async (data: any) => {
         const requests = await this.getRequests(user.uuid);
         this.requests = requests;
-        console.log(data);
         resolve(data);
       });
     })

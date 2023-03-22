@@ -200,13 +200,13 @@
     height: 90vh;
     width: 100%;
     color: white;
-    margin-top: 10vh;
+    //margin-top: 10vh;
 
 
     .container {
       position: relative;
       display: grid;
-      z-index: 4;
+      z-index: 2;
       grid-template-columns: 40% 60%;
       grid-template-rows: repeat(2, 1fr);
       grid-column-gap: 0px;

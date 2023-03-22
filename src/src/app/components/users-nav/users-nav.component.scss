@@ -68,9 +68,8 @@ nav {
 @media (min-width: 600px) {
 
   nav {
-    position: absolute;
-    top: 0;
-    z-index: 1;
+    position: relative;
+    z-index: 10;
     display: flex;
     align-items: center;
     background-color: $primary-color;
@@ -96,65 +95,11 @@ nav {
 
     .content-nav-desktop {
       height: 100%;
-      ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        width: 100vw;
-        justify-content: center;
-        align-items: center;
+      overflow-y: visible;
 
-
-
-        li {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100%;
-          cursor: pointer;
-
-
-
-          a {
-            color: white;
-            text-decoration: none;
-            font-size: large;
-            font-weight: 600;
-            overflow: hidden;
-
-            &:after {
-              display: block;
-              content: '';
-              transform: scale(0);
-              transition: transform 0.3s ease-in-out;
-              border-bottom: solid 5px white;
-            }
-
-            &:hover:after {
-              transform: scaleX(1);
-            }
-          }
-        }
-
-        .profile {
-          position: absolute;
-          right: 2vw;
-          height: 8vh;
-          width: 8vh;
-
-          button {
-            width: 100%;
-            height: 100%;
-
-            img {
-              height: auto;
-              max-width: 100%;
-              border-radius: 100%;
-            }
-          }
-        }
+      h2 {
+        width: 100%;
+        text-align: center ;
       }
     }
   }

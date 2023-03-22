@@ -33,7 +33,7 @@ export class SigningComponent implements OnInit{
     event.preventDefault();
     const {mail, password} = this.signing.value;
     this.authService.login({mail, password}).pipe(first()).subscribe(data => {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/users']);
     });
   }
 

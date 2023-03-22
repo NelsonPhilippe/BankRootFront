@@ -48,7 +48,7 @@ export class SignupComponent implements OnInit {
     register.subscribe((data: any) => {
       const statusCode = data.statusCode;
 
-      console.log(statusCode);
+      console.log(data);
 
       if(statusCode === 200) {
         this.authService.login({

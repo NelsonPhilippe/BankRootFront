@@ -1,0 +1,18 @@
+<div class="container-menu">
+  <div class="navigation">
+    <div class="user-box">
+      <div class="image-box">
+        <img src="https://i.pravatar.cc/" alt="avatar" loading="lazy">
+      </div>
+      <p class="username">Nelson</p>
+    </div>
+    <div class="menu-toggle" (click)="menuToggle()"></div>
+    <ul class="menu">
+      <li><a [routerLink]="['/users/profile']"><ion-icon name="person-outline"></ion-icon>Profile</a></li>
+      <li><a [routerLink]="['/users/transactions']"><ion-icon name="card-outline"></ion-icon>Transactions</a></li>
+      <li><a [routerLink]="['/users/requests']"><ion-icon name="checkbox-outline"></ion-icon>Demandes</a></li>
+      <li><a [routerLink]="['/administration']"><ion-icon name="megaphone-outline"></ion-icon>Admin</a></li>
+      <li><a href="#"><ion-icon name="log-out-outline"></ion-icon>Logout</a></li>
+    </ul>
+  </div>
+</div>

@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {HttpClient} from "@angular/common/http";
 import {HttpService} from "../../services/http.service";
-import {isArray} from "@angular/compiler-cli/src/ngtsc/annotations/common";
 
 @Component({
   selector: 'app-users',
@@ -15,7 +14,7 @@ export class UsersComponent implements OnInit {
   solde?: number;
 
   accounts!: any[];
-  constructor(private http: HttpService, private authService: AuthService) {
+  constructor( private http: HttpService, private authService: AuthService) {
   }
 
   async ngOnInit(): Promise<void> {
@@ -24,8 +23,6 @@ export class UsersComponent implements OnInit {
     const bankAccounts = await this.getBankAccountsByUser(user.uuid);
     this.loadTransactions(bankAccounts);
     this.loadBankAccounts(bankAccounts);
-    console.log(bankAccounts)
-
   }
 
   loadTransactions(bankAccounts: any) {
