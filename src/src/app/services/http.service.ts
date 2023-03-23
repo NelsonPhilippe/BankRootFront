@@ -54,4 +54,8 @@ export class HttpService {
   createAccountRequest(data: any) {
     return this.http.post('/api/account-request', data, this.httpOptions);
   }
+
+  updateProfile(id: number, data: any) {
+    return this.http.put('/api/user/' + id, data, this.httpOptions);
+  }
 }

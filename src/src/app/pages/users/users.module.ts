@@ -9,11 +9,12 @@ import {AuthService} from "../../services/auth.service";
 import {ReactiveFormsModule} from "@angular/forms";
 import { ProfileComponent } from './profile/profile.component';
 import {IonicModule} from "@ionic/angular";
+import { TransactionsComponent } from './transactions/transactions.component';
 
 
 
 @NgModule({
-  declarations: [UsersComponent, RequestsComponent, ProfileComponent],
+  declarations: [UsersComponent, RequestsComponent, ProfileComponent, TransactionsComponent],
   providers: [AuthService, httpInterceptorProviders],
   imports: [
     CommonModule,

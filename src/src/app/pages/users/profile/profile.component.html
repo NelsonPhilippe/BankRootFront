@@ -1,1 +1,13 @@
 <app-users-nav></app-users-nav>
+<div class="content">
+  <h1>Modifier mon profil</h1>
+  <form (ngSubmit)="onSubmit($event)" [formGroup]="profile" >
+    <label for="nom">Nom:</label>
+    <input type="text" id="nom" name="nom" required formControlName="name">
+    <label for="prenom">Prénom:</label>
+    <input type="text" id="prenom" name="prenom" required formControlName="lastname">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required formControlName="mail">
+    <button type="submit">Modifier</button>
+  </form>
+</div>

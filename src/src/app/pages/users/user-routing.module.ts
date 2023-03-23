@@ -4,6 +4,7 @@ import {UsersComponent} from "./users.component";
 import {RequestsComponent} from "./requests/requests.component";
 import {canActivate} from "../../guards/jwt.guard";
 import {ProfileComponent} from "./profile/profile.component";
+import {TransactionsComponent} from "./transactions/transactions.component";
 
 const routes : Routes = [
   {
@@ -20,6 +21,10 @@ const routes : Routes = [
       {
         path: 'profile', component: ProfileComponent,
         canActivate: [canActivate]
+      },
+      {
+        path: 'transactions', component: TransactionsComponent,
+        canActivate: [canActivate],
       }
     ]
   },

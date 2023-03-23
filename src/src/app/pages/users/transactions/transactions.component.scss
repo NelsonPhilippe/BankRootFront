@@ -1,0 +1,15 @@
+@import "../../../vars/variables";
+
+.content {
+  height: 100vh;
+  width: 100vw;
+  background: $backgroud-gradiant;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .transaction-table {
+
+  }
+}
