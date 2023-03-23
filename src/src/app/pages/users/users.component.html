@@ -13,32 +13,23 @@
 
       </div>
       <div class="solde-devise">
-        <h2>$</h2>
+        <h2>€</h2>
       </div>
     </section>
     <section class="transactions">
       <h2>Transactions</h2>
       <div class="content-transaction">
-        <table>
-          <thead>
-          <tr>
-            <th>Date</th>
-            <th>Montant</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let transaction of transactions">
-            <td>{{ transaction.created_at }}</td>
-            <td *ngIf="transaction.type === 'deposit'"> + {{ transaction.amount }} €</td>
-          </tr>
-          </tbody>
-        </table>
+        <ul class="l-body" *ngFor="let transaction of transactions">
+          <li *ngIf="transaction.type === 'deposit'"> + {{ transaction.amount }} €</li>
+          <li>{{ transaction.type }}</li>
+          <li><button>Details</button></li>
+        </ul>
       </div>
     </section>
     <section class="comptes">
       <h2>Comptes</h2>
       <div class="content-account">
-        <table>
+        <table *ngIf="accounts">
           <tbody>
           <tr *ngFor="let account of accounts">
             <td class="account-amount">{{ account.currency }} €</td>

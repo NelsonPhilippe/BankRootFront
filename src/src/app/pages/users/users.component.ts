@@ -30,6 +30,8 @@ export class UsersComponent implements OnInit {
 
       this.http.getTransactionsByBankAccount(account.num_account).subscribe((data: any) => {
         // console.log(JSON.stringify(data));
+        console.log(data.data)
+
         if(!(data.data instanceof Array)){
           this.transactions = [];
           return;

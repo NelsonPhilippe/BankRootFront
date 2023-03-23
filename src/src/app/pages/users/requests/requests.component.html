@@ -12,7 +12,7 @@
       </ul>
       <div class="row" id="row-{{request.id}}" *ngFor="let request of requests">
         <ul (click)="toggleMenu($event, request.id)">
-          <li>{{request.created_at | date: 'dd/mm/yyy' }}</li>
+          <li class="date">{{request.created_at | date: 'dd/mm/yyy' }}</li>
           <li>{{request.request_type}}</li>
           <li>{{request.content}}</li>
           <li id="pending" *ngIf="!request.status">En attente</li>
