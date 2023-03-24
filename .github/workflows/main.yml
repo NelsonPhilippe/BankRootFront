@@ -16,14 +16,14 @@ jobs:
     - name: Add SSL certificat
       uses: DamianReeves/write-file-action@master
       with: 
-        path: src/nginx/nginx.key
+        path: src/nginx/certificates/nginx.key
         write-mode: overwrite
         contents: ${{ secrets.NGINX_KEY }}
           
     - name: Add SSL certificat
       uses: DamianReeves/write-file-action@master
       with: 
-        path: src/nginx/nginx-certificate.crt
+        path: src/nginx/certificates/nginx-certificate.crt
         write-mode: overwrite
         contents: ${{ secrets.NGINX_CERTIFICATE_KEY }}
 
