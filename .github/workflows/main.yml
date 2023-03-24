@@ -39,7 +39,7 @@ jobs:
         username: debian
         password: ${{ secrets.SERVER_PASSWORD }}
         script: |
-          cd /home/debian/bankroot/
+          cd /home/debian/bankroot/src
           docker-compose up -d
 
 
