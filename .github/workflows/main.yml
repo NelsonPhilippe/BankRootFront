@@ -30,7 +30,7 @@ jobs:
         password: ${{ secrets.SERVER_PASSWORD }}
         script: |
           cd /home/debian/bankroot/src/
-          docker build -t angular/bankroot:v1 .
+          docker build -t angular/bankroot:v1 src/
           
     - name: Build container to the server !
       uses: appleboy/ssh-action@master
