@@ -1,0 +1,44 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Send files to server
+      uses: appleboy/scp-action@master
+      with:
+        host: {{ secrets.SERVER_IP }}
+        username: debian
+        password: ${{ secrets.SERVER_PASSWORD }}
+        source: src/
+        target: bankroot
+
+    - name: Build image to the server !
+      uses: appleboy/ssh-action@master
+      with:
+        host: {{ secrets.SERVER_IP }}
+        username: debian
+        password: ${{ secrets.SERVER_PASSWORD }}
+        script: |
+          cd /home/debian/bankroot/src/
+          docker build -t angular/bankroot:v1 .
+          
+    - name: Build container to the server !
+      uses: appleboy/ssh-action@master
+      with:
+        host: {{ secrets.SERVER_IP }}
+        username: debian
+        password: ${{ secrets.SERVER_PASSWORD }}
+        script: |
+          docker-compose up -d
+
+
