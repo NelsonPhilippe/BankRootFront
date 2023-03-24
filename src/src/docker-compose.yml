@@ -1,0 +1,7 @@
+version: '3.9'
+services:
+  bankroot:
+    image: angular/bankroot:v1
+    restart: always
+    ports:
+      - 80:80
