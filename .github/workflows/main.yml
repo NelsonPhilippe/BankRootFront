@@ -29,7 +29,7 @@ jobs:
         username: debian
         password: ${{ secrets.SERVER_PASSWORD }}
         script: |
-          cd /home/debian/bankroot/src/
+          cd /home/debian/bankroot/
           docker build -t angular/bankroot:v1 src/
           
     - name: Build container to the server !
