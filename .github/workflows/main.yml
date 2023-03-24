@@ -12,6 +12,20 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+    
+    - name: Add SSL certificat
+      uses: DamianReeves/write-file-action@master
+      with: 
+        path: src/nginx/nginx.key
+        write-mode: overwrite
+        contents: ${{ secrets.NGINX_KEY }}
+          
+    - name: Add SSL certificat
+      uses: DamianReeves/write-file-action@master
+      with: 
+        path: src/nginx/nginx-certificate.crt
+        write-mode: overwrite
+        contents: ${{ secrets.NGINX_CERTIFICATE_KEY }}
 
     - name: Send files to server
       uses: appleboy/scp-action@master
