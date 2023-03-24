@@ -20,7 +20,7 @@ export class SigningComponent implements OnInit{
   ngOnInit(): void {
 
     if(this.authService.getToken()) {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/users']);
     }
 
     this.signing = new FormGroup({
@@ -33,7 +33,7 @@ export class SigningComponent implements OnInit{
     event.preventDefault();
     const {mail, password} = this.signing.value;
     this.authService.login({mail, password}).pipe(first()).subscribe(data => {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/users']);
     });
   }
 

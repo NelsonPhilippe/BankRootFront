@@ -1,48 +1,43 @@
 <app-users-nav></app-users-nav>
 
 <div class="content">
-  <div class="logo">
-    <img src="../../../assets/logo.png" alt="logo"/>
-  </div>
-  <section class="solde">
-    <div class="solde-num">
-      <h2>{{solde}}</h2>
+  <div class="container">
+    <div class="logo">
+      <img src="../../../assets/logo.png" alt="logo"/>
     </div>
-    <div class="solde-devise">
-      <h2>$</h2>
-    </div>
-  </section>
-  <section class="transactions">
-    <h2>Transactions</h2>
-    <div class="content-transaction">
-      <table>
-        <thead>
-        <tr>
-          <th>Date</th>
-          <th>Montant</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let transaction of transactions">
-          <td>{{ transaction.created_at }}</td>
-          <td *ngIf="transaction.type === 'deposit'"> + {{ transaction.amount }} €</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-  <section class="comptes">
-    <h2>Comptes</h2>
-    <div class="content-account">
-      <table>
-        <tbody>
-        <tr *ngFor="let account of accounts">
-          <td class="account-amount">{{ account.currency }} €</td>
-          <td class="account-type">Livret A</td>
-        </tr>
+    <section class="solde">
+      <div class="solde-num">
+        <h2 *ngIf="solde! < 1000">{{solde}}</h2>
+        <h2 *ngIf="solde! >= 1000">{{solde}} K</h2>
+        <h2 *ngIf="solde! >= 100000000">{{solde}} K</h2>
 
-        </tbody>
-      </table>
-    </div>
-  </section>
+      </div>
+      <div class="solde-devise">
+        <h2>€</h2>
+      </div>
+    </section>
+    <section class="transactions">
+      <h2>Transactions</h2>
+      <div class="content-transaction">
+        <ul class="l-body" *ngFor="let transaction of transactions">
+          <li *ngIf="transaction.type === 'deposit'"> + {{ transaction.amount }} €</li>
+          <li>{{ transaction.type }}</li>
+          <li><button>Details</button></li>
+        </ul>
+      </div>
+    </section>
+    <section class="comptes">
+      <h2>Comptes</h2>
+      <div class="content-account">
+        <table *ngIf="accounts">
+          <tbody>
+          <tr *ngFor="let account of accounts">
+            <td class="account-amount">{{ account.currency }} €</td>
+            <td class="account-type">Livret A</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
 </div>

@@ -21,10 +21,8 @@ export class AuthService {
   login(data: LoginInterface) {
     return this.http.post('/api/auth/login', data, this.httpOptions).pipe(
       tap((token: any) => {
-        console.log(token)
         localStorage.setItem(this.jwtToken, token.access_token);
         this.isAuthentificatedSubhect.next(true);
-        console.log(this.isAuthentificatedSubhect.asObservable())
 
       })
     );

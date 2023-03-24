@@ -1,0 +1,139 @@
+$gray:  #555;
+$purple: #4e65ff;
+$green-blue: #92effd;
+$white: #fff;
+$font-family_1: 'Poppins', sans-serif;
+
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap";
+
+
+.container-menu {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  .navigation {
+    position: fixed;
+    top: 30px;
+    right: 20px;
+    width: 120px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    background: $white;
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: height 0.5s, width 0.5s;
+    transition-delay: 0s, 0.75s;
+    .user-box {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      transition: 0.5s;
+      transition-delay: 0.5s;
+      .username {
+        font-size: 1.2rem;
+        white-space: nowrap;
+        color: $gray;
+      }
+      .image-box {
+        position: relative;
+        min-width: 60px;
+        height: 60px;
+        background: $white;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 10px solid $white;
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .menu-toggle {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 32px;
+        height: 2px;
+        background: $gray;
+        transform: translateY(-10px);
+        box-shadow: 0 10px $gray;
+        transition: 0.5s;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 32px;
+        height: 2px;
+        background: $gray;
+        transform: translateY(10px);
+        transition: 0.5s;
+      }
+    }
+  }
+  .menu {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 60px);
+    margin-top: 60px;
+    padding: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    li {
+      list-style: none;
+      a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 20px 0;
+        font-size: 1rem;
+        text-decoration: none;
+        color: $gray;
+        ion-icon {
+          font-size: 1.5rem;
+        }
+        &:hover {
+          color: $gray;
+        }
+      }
+    }
+  }
+  .navigation.active {
+    .menu-toggle {
+      &::before {
+        transform: translateY(0px) rotate(45deg);
+        box-shadow: none;
+      }
+      &::after {
+        transform: translateY(0px) rotate(-45deg);
+      }
+    }
+    width: 300px;
+    height: 350px;
+    transition: width 0.5s, height 0.5s;
+    transition-delay: 0s, 0.75s;
+    .user-box {
+      width: calc(100% - 60px);
+      transition-delay: 0s;
+    }
+  }
+
+}

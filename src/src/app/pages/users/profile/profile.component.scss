@@ -1,0 +1,67 @@
+@import "../../../vars/variables";
+
+.content {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font: $font;
+  background: $backgroud-gradiant;
+
+  h1 {
+    font: $font;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 50px;
+    font-weight: bold;
+    color: $primary-color;
+  }
+
+  form {
+    margin: 50px auto;
+    width: 80%;
+    background-color: $primary-color;
+    padding: 3rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ccc;
+
+    label {
+      display: block;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 4rem;
+    }
+
+    button[type="submit"] {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 16px;
+
+      &:hover {
+        background-color: #3e8e41;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .content {
+
+    form {
+      width: 40%;
+    }
+  }
+}

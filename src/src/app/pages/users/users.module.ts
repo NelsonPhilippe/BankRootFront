@@ -6,16 +6,22 @@ import {UsersComponent} from "./users.component";
 import { RequestsComponent } from './requests/requests.component';
 import {httpInterceptorProviders} from "../../http-interceptors";
 import {AuthService} from "../../services/auth.service";
+import {ReactiveFormsModule} from "@angular/forms";
+import { ProfileComponent } from './profile/profile.component';
+import {IonicModule} from "@ionic/angular";
+import { TransactionsComponent } from './transactions/transactions.component';
 
 
 
 @NgModule({
-  declarations: [UsersComponent, RequestsComponent],
+  declarations: [UsersComponent, RequestsComponent, ProfileComponent, TransactionsComponent],
   providers: [AuthService, httpInterceptorProviders],
   imports: [
     CommonModule,
+    UsersRoutingModule,
+    ReactiveFormsModule,
     CommonComponentModule,
-    UsersRoutingModule
+
   ],
   exports: [UsersComponent]
 })

@@ -1,46 +1,54 @@
-<link rel="stylesheet" href="requests.component.scss">
 <app-users-nav> </app-users-nav>
 <section class="content">
-  <h2 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Demandes</h2>
-  <div class="table relative overflow-x-auto">
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-      <tr>
-        <th scope="col" class="px-6 py-3">
-          Date
-        </th>
-        <th scope="col" class="px-6 py-3">
-          Tag
-        </th>
-        <th scope="col" class="px-6 py-3">
-          Description
-        </th>
-        <th scope="col" class="px-6 py-3">
-          Status
-        </th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" *ngFor="let request of requests">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          {{request.created_at | date:'dd/MM/yyyy' }}
-        </th>
-        <td class="px-6 py-4">
-          {{request.request_type}}
-        </td>
-        <td class="px-6 py-4">
-          {{request.content}}
-        </td>
-        <td class="px-6 py-4">
-          <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100" *ngIf="request.status">
-            Approved
-          </span>
-          <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100" *ngIf="!request.status">
-            Pending
-          </span>
-        </td>
-      </tr>
-      </tbody>
-    </table>
+  <div class="container">
+    <h2>Demandes</h2>
+    <button class="create-request" (click)="openModal()">Creer</button>
+    <div class="request-table">
+      <ul class="l-head">
+        <li>Date</li>
+        <li>Type</li>
+        <li>Description</li>
+        <li>Statut</li>
+      </ul>
+      <div class="row" id="row-{{request.id}}" *ngFor="let request of requests">
+        <ul (click)="toggleMenu($event, request.id)">
+          <li class="date">{{request.created_at | date: 'dd/mm/yyy' }}</li>
+          <li>{{request.request_type}}</li>
+          <li>{{request.content}}</li>
+          <li id="pending" *ngIf="!request.status">En attente</li>
+          <li id="validate" *ngIf="request.status">Validé</li>
+        </ul>
+        <div id="menu-{{request.id}}" class="menu">
+          <button class="btn btn-danger" (click)="delete(request.id)" >Supprimer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-request" class="modal-request">
+    <div class="content-modal">
+      <div class="header">
+        <h2>Creer une demande</h2>
+        <button class="close" (click)="closeModal()" >X</button>
+      </div>
+      <div class="body">
+        <form (ngSubmit)="onSubmit($event)" [formGroup]="request" >
+          <div class="form-group">
+            <label for="type">Type</label>
+            <select class="form-control" id="type" formControlName="type">
+              <option value="OVERDRAFT_LIMIT">Limite de découvert</option>
+              <option value="WITHDRAWAL_LIMIT">Limite de retrait</option>
+              <option value="PAYMENT_CEILING">Limite de paiement</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="content">Contenu de la demande</label>
+            <textarea class="form-control" id="content" formControlName="content"></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Valider</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </section>
