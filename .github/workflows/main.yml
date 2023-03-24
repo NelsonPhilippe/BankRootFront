@@ -16,7 +16,7 @@ jobs:
     - name: Send files to server
       uses: appleboy/scp-action@master
       with:
-        host: {{ secrets.SERVER_IP }}
+        host: ${{ secrets.SERVER_IP }}
         username: debian
         password: ${{ secrets.SERVER_PASSWORD }}
         source: src/
@@ -25,7 +25,7 @@ jobs:
     - name: Build image to the server !
       uses: appleboy/ssh-action@master
       with:
-        host: {{ secrets.SERVER_IP }}
+        host: ${{ secrets.SERVER_IP }}
         username: debian
         password: ${{ secrets.SERVER_PASSWORD }}
         script: |
@@ -35,7 +35,7 @@ jobs:
     - name: Build container to the server !
       uses: appleboy/ssh-action@master
       with:
-        host: {{ secrets.SERVER_IP }}
+        host: ${{ secrets.SERVER_IP }}
         username: debian
         password: ${{ secrets.SERVER_PASSWORD }}
         script: |
