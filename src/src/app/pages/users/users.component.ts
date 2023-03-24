@@ -18,6 +18,8 @@ export class UsersComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
+
+
     const profile = await this.getProfile();
     const user = await this.getUser(profile.sub);
     const bankAccounts = await this.getBankAccountsByUser(user.uuid);
