@@ -30,5 +30,5 @@ jobs:
         password: ${{ secrets.SERVER_PASSWORD }}
         script: |
           cd /home/debian/bankroot/src/
-          docker build -t angular/bankroot:v1 
+          docker build -t angular/bankroot:v1 .
           docker-compose up -d
