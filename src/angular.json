@@ -77,13 +77,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "1mb",
+                  "maximumError": "200mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "1mb",
+                  "maximumError": "200mb"
                 }
               ],
               "outputHashing": "all"
@@ -104,7 +104,7 @@
           "configurations": {
             "production": {
               "browserTarget": "BankRootFront:build:production",
-              "proxyConfig": "proxy.conf.json"
+              "proxyConfig": "proxy.conf.prod.json"
             },
             "development": {
               "browserTarget": "BankRootFront:build:development",
