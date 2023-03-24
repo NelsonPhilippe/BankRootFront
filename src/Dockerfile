@@ -26,7 +26,6 @@ COPY --from=build /app/dist/bank-root-front /usr/share/nginx/html
 
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
-
 # Expose port 80
 EXPOSE 80
 
