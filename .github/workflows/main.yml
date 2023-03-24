@@ -22,24 +22,13 @@ jobs:
         source: src/
         target: bankroot
 
-    - name: Build image to the server !
+    - name: Build image and container to the server !
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.SERVER_IP }}
         username: debian
         password: ${{ secrets.SERVER_PASSWORD }}
         script: |
-          cd /home/debian/bankroot/
-          docker build -t angular/bankroot:v1 src/
-          
-    - name: Build container to the server !
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.SERVER_IP }}
-        username: debian
-        password: ${{ secrets.SERVER_PASSWORD }}
-        script: |
-          cd /home/debian/bankroot/src
+          cd /home/debian/bankroot/src/
+          docker build -t angular/bankroot:v1 
           docker-compose up -d
-
-
