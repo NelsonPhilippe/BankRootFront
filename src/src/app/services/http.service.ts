@@ -58,4 +58,8 @@ export class HttpService {
   updateProfile(id: number, data: any) {
     return this.http.put('/api/user/' + id, data, this.httpOptions);
   }
+
+  getTransactions() {
+    return this.http.get('/api/transaction/', this.httpOptions);
+  }
 }

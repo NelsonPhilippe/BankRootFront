@@ -22,6 +22,7 @@ export class AuthService {
     return this.http.post('/api/auth/login', data, this.httpOptions).pipe(
       tap((token: any) => {
         localStorage.setItem(this.jwtToken, token.access_token);
+
         this.isAuthentificatedSubhect.next(true);
 
       })
