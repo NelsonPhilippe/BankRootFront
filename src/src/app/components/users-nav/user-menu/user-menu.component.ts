@@ -3,6 +3,7 @@ import {Icon} from "ionicons/dist/types/components/icon/icon";
 import {IonicModule} from "@ionic/angular";
 import {CommonComponentModule} from "../../common.module";
 import {RouterLink} from "@angular/router";
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   standalone: true,
@@ -19,14 +20,29 @@ export class UserMenuComponent implements OnInit{
 
   username!: string;
 
-  ngOnInit(): void {
-    this.username = localStorage.getItem('username') || '';
+  constructor(private http: HttpService) {
+
+  }
+
+  async ngOnInit(): Promise<void> {
+
+    this.username = (await this.getProfile()).name
   }
 
   menuToggle() {
     const navigation = document.querySelector('.navigation');
     if(navigation == null) return;
     navigation.classList.toggle('active');
+  }
+
+  getProfile(): Promise<any>  {
+    return new Promise((resolve, reject) => {
+      this.http.getProfile().subscribe((data: any) => {
+        this.http.getProfileById(data.sub).subscribe(data => {
+          resolve(data);
+        })
+      })
+    })
   }
 
 }
